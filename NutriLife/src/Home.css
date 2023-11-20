@@ -1,8 +1,8 @@
-body {
+body{
   max-width: auto;
   margin: 0 auto;
   padding: 2rem;
   justify-content: center;
   text-align: center;
-  background-color: chocolate;
+  background-color: green;
 }
