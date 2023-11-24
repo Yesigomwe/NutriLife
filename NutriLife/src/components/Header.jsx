@@ -1,31 +1,65 @@
-import './Header.css';
-import { useState } from 'react';
+import { useState } from "react";
+import "./Header.css";
 
-function Header() {
-    let [clicked,setClicked]=useState(false)
+const NavigationBar = () => {
+  const [selectedItem, setSelectedItem] = useState(null);
 
+  const handleClick = (item) => {
+    setSelectedItem(item);
+  };
 
+  return (
+    <div className="header">
+      <img className="logo" src="./src/assets/logo.png" alt="" />
+      <div className="navigation-bar">
+        <NavItem
+          item="Home"
+          selected={selectedItem === "Home"}
+          onClick={handleClick}
+        />
+        <NavItem
+          item="Recipe"
+          selected={selectedItem === "Recipe"}
+          onClick={handleClick}
+        />
+        <NavItem
+          item="Blog"
+          selected={selectedItem === "Blog"}
+          onClick={handleClick}
+        />
+        <NavItem
+          item="About Us"
+          selected={selectedItem === "About"}
+          onClick={handleClick}
+        />
+        <NavItem
+          item="Contact"
+          selected={selectedItem === "Contact"}
+          onClick={handleClick}
+        />
+      </div>
+      <div className="auth">
+        <div id="signIn">
+          <nav href="#">Log In</nav>
+        </div>
+        <div id="signUp">
+          <nav href="#">Sign Up</nav>
+        </div>
+      </div>
+    </div>
+  );
+};
 
+// eslint-disable-next-line react/prop-types
+const NavItem = ({ item, selected, onClick }) => {
+  return (
+    <div
+      className={`nav-item ${selected ? "selected" : ""}`}
+      onClick={() => onClick(item)}
+    >
+      {item}
+    </div>
+  );
+};
 
-    return (
-        <div className='header'>
-
-            <img className="logo" src="src/assets/logo.png" alt="logo" />
-
-
-            <nav className="navigation">
-                <a id="home"  style={{ color: clicked ? '#DC661F' : 'black' }}
-      onClick={() => setClicked(!clicked)} href="#">Home</a>
-                <a id="recipes" href="#">Recipes</a>
-                <a id="blogs" href="#">Blogs</a>
-                <a id="about" href="#">About Us</a>
-                <a id="contact" href="#">Contact</a>
-            </nav>
-
-            <div className="authentification">
-
-            </div>
-        </div>)
-}
-
-export default Header
+export default NavigationBar;

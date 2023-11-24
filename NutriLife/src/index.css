@@ -1,10 +1,12 @@
-:root {
+/* I will just keep the original code commented out just in case we need to revert from tailwind. */
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color:#DC661F;
   background-color: #242424;
 
   font-synthesis: none;
@@ -53,9 +55,13 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color:null;
   }
   button {
     background-color: #f9f9f9;
   }
-}
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
