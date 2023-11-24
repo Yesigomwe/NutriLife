@@ -1,4 +1,6 @@
-:root {
+/* I will just keep the original code commented out just in case we need to revert from tailwind. */
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -58,4 +60,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
