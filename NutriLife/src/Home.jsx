@@ -1,31 +1,33 @@
-import './Home.css';
-import {useState} from 'react';
-import NavigationBar from './components/Header';
-import '@mantine/core/styles.css';
-import { MantineProvider } from '@mantine/core';
+import "./Home.css";
+import { useState } from "react";
+import NavigationBar from "./components/Header";
+import Login from "./components/Login";
+import "@mantine/core/styles.css";
+import { MantineProvider } from "@mantine/core";
 function Home() {
-
-  const [message, updateMassage] = useState("G5")
+  const [message, updateMassage] = useState("G5");
 
   const handleClick = () => {
     updateMassage("Nutrilife");
-
-  }
+  };
 
   return (
     <MantineProvider>
-<home>
-        <NavigationBar/>
-      <div>
-        <h2>Welcome to {message}! </h2>
-        <button className='bg-[#FE6314] rounded-lg width: 30px' onClick={handleClick}>Click</button>
-      </div>
-    </home>
+      <NavigationBar />
+      <Login />
 
+     <div>
+        <h2>WELCOME TO {message}! </h2>
+        <button
+          className="bg-[#FE6314] rounded-lg width: 30px"
+          onClick={handleClick}
+        >
+          Click
+        </button>
+      </div> 
+      
     </MantineProvider>
-
-    
-  )
+  );
 }
 
-export default Home
+export default Home;
