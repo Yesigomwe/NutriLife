@@ -15,6 +15,7 @@ function Home() {
   return (
     <MantineProvider>
 <home>
+  
         <NavigationBar/>
       <div>
         <h2>Welcome to {message}! </h2>
