@@ -1,26 +1,27 @@
-import { useState } from "react"
-import { MantineProvider } from "@mantine/core";
-const searchBar = () =>{
+import {useState} from "react"
+import { MantineProvider} from "@mantine/core";
+const SearchBar = () => {
 
-const[searchInput, setSearchInput] = useState("null")
+	const [searchInput, setSearchInput] = useState("Search here")
 
-const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-};
+	const handleChange = (e) => {
+		e.preventDefault();
+		setSearchInput(e.target.value);
+	};
 
-return(
-    <MantineProvider>
-        theme={{
-        fontFamily: 'Verdana, sans-serif'}}
-
-    <div>
-        <input className="rounded-full px-20" type="text" placeholder="search here" 
-        onChange ={handleChange} value={searchInput}></input>
-    </div>
-    </MantineProvider>
-)
+	return (
+       
+       <MantineProvider>
+		<div>
+		<i class="fa fa-search" aria-hidden="true"></i>
+	<input className="bg-orange-300 rounded-full px-40 my-8 py-3" type="text"
+			 placeholder="search here"  onChange ={handleChange}
+				value={searchInput} />		
+				
+		</div>
+		</MantineProvider>
+	)
 
 }
 
-export default searchBar
+export default SearchBar
