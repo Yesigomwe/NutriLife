@@ -3,7 +3,7 @@ import React from "react"
 function Footer() {
 	return (
 		<div className="Footer flex flex-row bg-[#FE6314] h-78 my-2 justify-around">
-			<div className="Footer-headings flex flex-col flex-wrap flex-start text-align-left text-white mx-4">
+			<div className="Footer-headings flex flex-col flex-wrap flex-start text-align-left text-white mx-4 items-start">
 
 				<h1 className="text-3xl py-4">ABOUT</h1>
 				<a href="/">Our partners</a>
