@@ -1,5 +1,6 @@
 import {useState} from "react"
 import { MantineProvider} from "@mantine/core";
+
 const SearchBar = () => {
 
 	const [searchInput, setSearchInput] = useState("Search here")
