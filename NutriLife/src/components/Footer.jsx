@@ -1,4 +1,3 @@
-import React from "react"
 
 function Footer() {
 	return (
@@ -21,7 +20,7 @@ function Footer() {
 				<p className="text-white indent-0">You will receive weeekly news about <br></br> the best deals,recipes and package suggestions</p>
 				<input className="px-10 my-4 rounded" type="text" placeholder="Enter email address..."/>
 			</div>
-         <div className="h-90">
+         <div className="h-90 w-90">
             <img className="logo my-6" src="../src/assets/logo.png"/>
          </div>
 		</div>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Recipes from "./Recipes";
 import WhyUs from "./WhyUs";
+import Footer from "./Footer";
 // import RecipeDetails from "./RecipeDetails";
 
 function LandingPage() {
@@ -90,13 +91,7 @@ function LandingPage() {
       <div className="w-auto bg-green h-102 flex justify-end gap-5 items-center pr-4">
         <img className="w-80 h-64" src="src/assets/fb.png" alt="fb" />
       </div>
-      <div className="w-auto h-380 bg-orange">
-        <div>
-          <span>
-            <h3>About</h3>
-          </span>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
