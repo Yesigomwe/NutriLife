@@ -20,9 +20,8 @@ function App() {
   return (
     <MantineProvider>
       <NavigationBar />
-
       <Routes>
-        <Route path="/LandingPage" element={<LandingPage />} />
+        <Route path="index" element={<LandingPage />} />
         <Route path="/recipe" element={<Recipes />} />
         <Route path="RecipeDetails" element={<RecipeDetails />} />
         <Route path="/Categories" element={<Categories />} />

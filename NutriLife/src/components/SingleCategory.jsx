@@ -17,15 +17,3 @@ export function SingleCategory(props) {
     </div>
   );
 }
-
-// function Recipe(props) {
-//   return (
-//     <div className="w-340 h-580 ">
-//       <img src={props.image} alt="image" />
-//       <div className="bg-orange w-340 h-100 flex flex-col text-white font-bold items-center justify-center">
-//         <p>{props.name}</p>
-//         <button className="bg-green w-300">View Details</button>
-//       </div>
-//     </div>
-//   );
-// }
