@@ -3,7 +3,7 @@ import { Checkbox } from "@mantine/core";
 import { useState } from "react";
 
 
-function Login() {
+export function Login() {
  const divider = <svg width="241" height="1" viewBox="0 0 241 1" fill="none" xmlns="http://www.w3.org/2000/svg">
  <path id="Line 10" d="M0.5 0.5H240.5" stroke="#FE6314"/>
  </svg>
@@ -16,7 +16,7 @@ function Login() {
  }
 
   return (
-    <div className="h-780 w-1290 flex items-center justify-center">
+    <div className="h-780 w-1290 flex items-center justify-center m-auto">
         
       <div
         className="w-645 h-780 bg-[#1A5D1A] text-white flex flex-col justify-center px-8 gap-2"
@@ -70,4 +70,3 @@ function Login() {
   );
 }
 
-export default Login;
