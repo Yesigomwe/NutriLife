@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function NavigationBar(){
   const [selectedItem, setSelectedItem] = useState(null);
@@ -12,18 +13,25 @@ function NavigationBar(){
     <div className="header flex border-solid border-2 border-orange items-center justify-around p-2">
       <img className="logo rounded-full w-90 h-90" src="./src/assets/logo.png" alt="" />
       <div className="navigation-bar flex">
-        <NavItem item="Home" selected={selectedItem === "Home"} onClick={handleClick} />
-        <NavItem item="Recipe" selected={selectedItem === "Recipe"} onClick={handleClick} />
-        <NavItem item="Blog" selected={selectedItem === "Blog"} onClick={handleClick} />
-        <NavItem item="About Us" selected={selectedItem === "About Us"} onClick={handleClick} />
-        <NavItem item="Contact" selected={selectedItem === "Contact"} onClick={handleClick} />
+<Link to="/LandingPage">         <NavItem item="Home" selected={selectedItem === "Home"} onClick={handleClick} />
+</Link>
+<Link to="/Categories"> <NavItem item="Recipe" selected={selectedItem === "Recipe"} onClick={handleClick} />
+ </Link>
+<Link to="/Blogs">        <NavItem item="Blog" selected={selectedItem === "Blog"} onClick={handleClick} />
+
+</Link>
+<Link to="/AboutUs">   <NavItem item="About Us" selected={selectedItem === "About Us"} onClick={handleClick} />
+</Link>
+<Link to="/Contact">        <NavItem item="Contact" selected={selectedItem === "Contact"} onClick={handleClick} />
+</Link>
+
       </div>
       <div className="auth flex">
         <div id="signIn" className="text-orange font-bold w-60 h-30">
-          <a href="#">Log In</a>
+          <Link to="/login">Log In</Link>
         </div>
-        <div id="signUp" className="text-white bg-orange font-bold rounded-5 w-60 h-30">
-          <a href="#">Sign Up</a>
+        <div id="signUp" className="text-white bg-orange font-bold rounded-5 w-auto h-30">
+        <Link to="/signup">Sign Up</Link>
         </div>
       </div>
     </div>

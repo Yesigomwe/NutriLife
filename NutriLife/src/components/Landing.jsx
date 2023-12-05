@@ -1,17 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
 import Recipes from "./Recipes";
 import WhyUs from "./WhyUs";
 import Footer from "./Footer";
-// import RecipeDetails from "./RecipeDetails";
+import SearchBar from "./SearchBar";
 
 function LandingPage() {
-  const [showRecipeDetails, setShowRecipeDetails] = useState(false);
-  const handleShowRecipeDetails = () => {
-    setShowRecipeDetails(true);
-  };
-
+  
   return (
+  <div>
+    <SearchBar/>
     <div className="pt-6">
       <div className="flex h-700 text-white items-center font-bold bg-orange justify-center">
         <p className="w-700">
@@ -32,23 +29,24 @@ function LandingPage() {
       </h1>
       <div className="bg-orange w-1440 h-600 p-6 flex flex-col  ">
         <div className="flex justify-around">
+       
           <Recipes
             image="src/assets/recipe1.png"
             description="Matooke(Green Banana) Stew"
-            handleClick={handleShowRecipeDetails}
           />
-          {/* {showRecipeDetails && <RecipeDetails />} */}
-
-          <Recipes
-            image="src/assets/recipe2.png"
-            description="Rolex"
-            handleClick={handleShowRecipeDetails}
-          />
-          <Recipes
+        
+        <Recipes
             image="src/assets/recipe1.png"
-            description="Eshabwe"
-            handleClick={handleShowRecipeDetails}
+            description="Matooke(Green Banana) Stew"
           />
+        
+        <Recipes
+            image="src/assets/recipe1.png"
+            description="Matooke(Green Banana) Stew"
+          />
+        
+         
+
         </div>
         <div className="justify-center">
           <button className="bg-green h-70 w-192 text-white font-bold rounded-5 m-8">
@@ -92,6 +90,7 @@ function LandingPage() {
         <img className="w-80 h-64" src="src/assets/fb.png" alt="fb" />
       </div>
       <Footer />
+    </div>
     </div>
   );
 }

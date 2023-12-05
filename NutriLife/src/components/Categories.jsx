@@ -1,7 +1,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function Categories() {
+  return (
+    <>
+      <div className=" categories w-1290 h-780 bg-green">
+        <CategoriesNav />
+      </div>
+    </>
+  );
+}
+
+export function CategoriesNav() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleClick = (item) => {
@@ -9,36 +20,46 @@ function Categories() {
   };
 
   return (
-    <div className=" categories w-1290 h-780 bg-green">
-      <div className="categories-navigation flex">
+    <div className="categories-navigation flex">
+      <Link to="/SingleCategory">
         <NavItem
           item="Elderly"
           selected={selectedItem === "Elderly"}
           onClick={handleClick}
         />
+      </Link>
+
+      <Link to="/SingleCategory">
         <NavItem
           item="Children"
           selected={selectedItem === "Children"}
           onClick={handleClick}
         />
+      </Link>
+
+      <Link to="/SingleCategory">
         <NavItem
           item="Lifestyle"
           selected={selectedItem === "Lifestyle"}
           onClick={handleClick}
         />
+      </Link>
+
+      <Link to="/SingleCategory">
         <NavItem
           item="Fitness"
           selected={selectedItem === "Fitness"}
           onClick={handleClick}
         />
+      </Link>
+
+      <Link to="/SingleCategory">
         <NavItem
-          item="Expecting moms"
-          selected={selectedItem === "Expecting moms"}
+          item="Expecting Moms"
+          selected={selectedItem === "Expecting Moms"}
           onClick={handleClick}
         />
-       
-      </div>
-
+      </Link>
     </div>
   );
 }
