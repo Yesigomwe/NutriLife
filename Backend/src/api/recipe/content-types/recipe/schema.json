@@ -20,6 +20,12 @@
       "repeatable": false,
       "component": "image.image",
       "required": true
+    },
+    "recipe_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe-category.recipe-category",
+      "mappedBy": "recipe"
     }
   }
 }
