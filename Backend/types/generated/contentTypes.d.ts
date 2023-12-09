@@ -691,6 +691,11 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     recipeImage: Attribute.Component<'image.image'> & Attribute.Required;
+    recipe_categories: Attribute.Relation<
+      'api::recipe.recipe',
+      'oneToMany',
+      'api::recipe-category.recipe-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -721,6 +726,11 @@ export interface ApiRecipeCategoryRecipeCategory extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
+    recipe: Attribute.Relation<
+      'api::recipe-category.recipe-category',
+      'manyToOne',
+      'api::recipe.recipe'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
