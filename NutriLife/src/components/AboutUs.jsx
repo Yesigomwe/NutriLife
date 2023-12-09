@@ -59,7 +59,7 @@ export function AboutUs() {
             >
               {teamMember.attributes.display_image && (
                 <img
-                  src={`http://localhost:1337${teamMember.attributes.display_image[0].image.data.attributes.formats.thumbnail.url}`}
+                  src={`http://localhost:1337${teamMember.attributes.display_image.image.data.attributes.formats.thumbnail.url}`}
                   alt="image"
                   className="h-300 w-300 rounded-5"
                 />
