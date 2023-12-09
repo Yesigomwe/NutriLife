@@ -677,6 +677,38 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiRecipeRecipe extends Schema.CollectionType {
+  collectionName: 'recipes';
+  info: {
+    singularName: 'recipe';
+    pluralName: 'recipes';
+    displayName: 'recipe';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    recipeImage: Attribute.Component<'image.image'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recipe.recipe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recipe.recipe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRecipeCategoryRecipeCategory extends Schema.CollectionType {
   collectionName: 'recipe_categories';
   info: {
@@ -757,6 +789,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::recipe.recipe': ApiRecipeRecipe;
       'api::recipe-category.recipe-category': ApiRecipeCategoryRecipeCategory;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
     }
