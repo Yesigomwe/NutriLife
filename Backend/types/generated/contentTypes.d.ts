@@ -696,6 +696,11 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
       'oneToMany',
       'api::recipe-category.recipe-category'
     >;
+    recipe_detail: Attribute.Relation<
+      'api::recipe.recipe',
+      'oneToOne',
+      'api::recipe-detail.recipe-detail'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -742,6 +747,44 @@ export interface ApiRecipeCategoryRecipeCategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::recipe-category.recipe-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRecipeDetailRecipeDetail extends Schema.CollectionType {
+  collectionName: 'recipe_details';
+  info: {
+    singularName: 'recipe-detail';
+    pluralName: 'recipe-details';
+    displayName: 'Recipe detail';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    details: Attribute.Text & Attribute.Required;
+    recipe: Attribute.Relation<
+      'api::recipe-detail.recipe-detail',
+      'oneToOne',
+      'api::recipe.recipe'
+    >;
+    detail_image: Attribute.Component<'image.image'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recipe-detail.recipe-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recipe-detail.recipe-detail',
       'oneToOne',
       'admin::user'
     > &
@@ -801,6 +844,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::recipe.recipe': ApiRecipeRecipe;
       'api::recipe-category.recipe-category': ApiRecipeCategoryRecipeCategory;
+      'api::recipe-detail.recipe-detail': ApiRecipeDetailRecipeDetail;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
     }
   }

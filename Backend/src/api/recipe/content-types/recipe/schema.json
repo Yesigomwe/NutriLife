@@ -26,6 +26,12 @@
       "relation": "oneToMany",
       "target": "api::recipe-category.recipe-category",
       "mappedBy": "recipe"
+    },
+    "recipe_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::recipe-detail.recipe-detail",
+      "mappedBy": "recipe"
     }
   }
 }
