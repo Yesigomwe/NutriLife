@@ -55,6 +55,7 @@ function LandingPage() {
             {Array.isArray(data) ? (
               data.map((recipe) => (
                 <Recipes
+                name={recipe.attributes.name}
                   key={recipe.id}
                   image={`http://localhost:1337${recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}`}
                   description={recipe.attributes.name}
