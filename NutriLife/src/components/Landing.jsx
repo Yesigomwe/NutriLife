@@ -20,7 +20,7 @@ function LandingPage() {
         }
 
         const result = await response.json();
-        setData(result.data);
+        setData(result.data.slice(0,3)); //Adding slice method limits the results to 3 items since limit parameter is a strapi limitation.
       } catch (error) {
         console.error("Fetch error:", error);
       }
