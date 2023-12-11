@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export function AboutUs() {
   const apiUrl =
-    "http://localhost:1337/api/team-members?populate[display_image][populate]=*";
+    "https://nutrilife.onrender.com/api/team-members?populate[display_image][populate]=*";
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export function AboutUs() {
             >
               {teamMember.attributes.display_image && (
                 <img
-                  src={`http://localhost:1337${teamMember.attributes.display_image.image.data.attributes.formats.thumbnail.url}`}
+                  src={`https://nutrilife.onrender.com${teamMember.attributes.display_image.image.data.attributes.formats.thumbnail.url}`}
                   alt="image"
                   className="h-300 w-300 rounded-5"
                 />

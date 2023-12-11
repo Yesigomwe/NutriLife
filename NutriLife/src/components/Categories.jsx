@@ -20,7 +20,7 @@ export function CategoriesNav() {
 
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const CategoriesUrl = "http://localhost:1337/api/recipe-categories";
+  const CategoriesUrl = "https://nutrilife.onrender.com/api/recipe-categories";
   const [data, setData] = useState(null);
 
 

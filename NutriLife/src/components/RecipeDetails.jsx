@@ -8,7 +8,7 @@ function RecipeDetails(props) {
     const fetchRecipeDetails = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/recipe-details?populate[detail_image][populate]=*"
+          "https://nutrilife.onrender.com/api/recipe-details?populate[detail_image][populate]=*"
         );
 
         if (!response.ok) {
@@ -44,7 +44,7 @@ function RecipeDetails(props) {
             <div >
             {recipeDetails.attributes.detail_image && recipeDetails.attributes.detail_image.image && (
               <img className="w-645 h-780"
-                src={`http://localhost:1337${recipeDetails.attributes.detail_image.image.data.attributes.formats.thumbnail.url}`}
+                src={`https://nutrilife.onrender.com${recipeDetails.attributes.detail_image.image.data.attributes.formats.thumbnail.url}`}
                 alt="recipe_details"
               />
             )}
