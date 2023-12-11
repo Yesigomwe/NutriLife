@@ -62,7 +62,7 @@ export function Login() {
       <div>
         <img
           className="w-645 h-780"
-          src="src/assets/login_image.png"
+          src="/assets/login_image.png"
           alt="login image"
         />
       </div>

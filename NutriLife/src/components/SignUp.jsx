@@ -119,7 +119,7 @@ export function SignUp() {
         </div>
       </div>
       <div className=" image w-645 h-780">
-        <img src="src/assets/signup.png" alt="signup" />
+        <img src="/assets/signup.png" alt="signup" />
       </div>
     </div>
   );

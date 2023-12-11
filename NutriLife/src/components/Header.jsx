@@ -11,7 +11,7 @@ function NavigationBar(){
 
   return (
     <div className="header flex border-solid border-2 border-orange items-center justify-around p-2">
-      <img className="logo rounded-full w-90 h-90" src="./src/assets/logo.png" alt="" />
+      <img className="logo rounded-full w-90 h-90" src=".//assets/logo.png" alt="" />
       <div className="navigation-bar flex">
 <Link to="/">         <NavItem item="Home" selected={selectedItem === "Home"} onClick={handleClick} />
 </Link>

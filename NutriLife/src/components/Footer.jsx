@@ -21,7 +21,7 @@ function Footer() {
 				<input className="px-10 my-4 rounded" type="text" placeholder="Enter email address..."/>
 			</div>
          <div className="h-90 w-90">
-            <img className="logo my-6" src="../src/assets/logo.png"/>
+            <img className="logo my-6" src="..//assets/logo.png"/>
          </div>
 		</div>
 	)
