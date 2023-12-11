@@ -1,6 +1,8 @@
 # NutriLife
 This repo is for our group community impact project called NutriLife.  The project is aimed at improving the well-being of our users.
 
+## The application can be accessed at: https://nutrilife1.vercel.app/
+
 ### Get started:
 Clone the repository to your computer with the command 
 
