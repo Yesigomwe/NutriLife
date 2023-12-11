@@ -13,7 +13,7 @@ function NavigationBar(){
     <div className="header flex border-solid border-2 border-orange items-center justify-around p-2">
       <img className="logo rounded-full w-90 h-90" src="./src/assets/logo.png" alt="" />
       <div className="navigation-bar flex">
-<Link to="/index">         <NavItem item="Home" selected={selectedItem === "Home"} onClick={handleClick} />
+<Link to="/">         <NavItem item="Home" selected={selectedItem === "Home"} onClick={handleClick} />
 </Link>
 <Link to="/Categories"> <NavItem item="Recipe" selected={selectedItem === "Recipe"} onClick={handleClick} />
  </Link>

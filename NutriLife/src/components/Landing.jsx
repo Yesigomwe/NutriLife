@@ -12,7 +12,7 @@ function LandingPage() {
     const fetchRecipe = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/recipes?populate[recipeImage][populate]=*"
+          "https://nutrilife.onrender.com/api/recipes?populate[recipeImage][populate]=*"
         );
 
         if (!response.ok) {
@@ -57,7 +57,9 @@ function LandingPage() {
                 <Recipes
                 name={recipe.attributes.name}
                   key={recipe.id}
-                  image={`http://localhost:1337${recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}`}
+                  
+                  image={`https://nutrilife.onrender.com${recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}`}
+                  
                   description={recipe.attributes.name}
                 />
               ))
