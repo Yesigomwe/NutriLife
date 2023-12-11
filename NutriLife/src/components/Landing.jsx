@@ -41,7 +41,7 @@ function LandingPage() {
           </p>
           <img
             className="h-700 w-700"
-            src="src/assets/home_image.png"
+            src="/assets/home_image.png"
             alt="image"
           />
         </div>
@@ -79,15 +79,15 @@ function LandingPage() {
           </h1>
           <div className="pt-16 flex justify-between flex-grow">
             <WhyUs
-              image="src/assets/delivery.png"
+              image="/assets/delivery.png"
               description="Fast Deliveries"
             />
             <WhyUs
-              image="src/assets/payment.png"
+              image="/assets/payment.png"
               description="Budget-Friendly"
             />
 
-            <WhyUs image="src/assets/support.png" description="Live Chat" />
+            <WhyUs image="/assets/support.png" description="Live Chat" />
           </div>
         </div>
         <div className="w-1440 h-700 bg-orange p-8">
@@ -101,14 +101,14 @@ function LandingPage() {
               This offer is available from 16th NOV-27th DEC. It applies on all
               package subscriptions and orders.
             </p>
-            <img className="w-650" src="src/assets/offer.png" alt="offer" />
+            <img className="w-650" src="/assets/offer.png" alt="offer" />
           </div>
           <h2 className="bg-green text-white font-bold w-340 h-40">
             Claim Offers Now!
           </h2>
         </div>
         <div className="w-auto bg-green h-102 flex justify-end gap-5 items-center pr-4">
-          <img className="w-80 h-64" src="src/assets/fb.png" alt="fb" />
+          <img className="w-80 h-64" src="/assets/fb.png" alt="fb" />
         </div>
         <Footer />
       </div>
