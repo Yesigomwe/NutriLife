@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 function Categories() {
+
+
+
   return (
     <>
       <div className=" categories w-1290 h-780 bg-green">
@@ -13,7 +16,37 @@ function Categories() {
 }
 
 export function CategoriesNav() {
+
+
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const CategoriesUrl = "https://nutrilife.onrender.com/api/recipe-categories";
+  const [data, setData] = useState(null);
+
+
+
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(CategoriesUrl);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        setData(result.data);
+        console.log(result.data );
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []); // Empty dependency array ensures the effect runs once on mount
+
+
 
   const handleClick = (item) => {
     setSelectedItem(item);
@@ -21,45 +54,28 @@ export function CategoriesNav() {
 
   return (
     <div className="categories-navigation flex">
-      <Link to="/SingleCategory">
-        <NavItem
-          item="Elderly"
-          selected={selectedItem === "Elderly"}
-          onClick={handleClick}
-        />
-      </Link>
+      {
+        Array.isArray(data)?(
+          data.map((category)=>(
+            <Link key={category.id} to="/SingleCategory">
+            <NavItem
+              item={category.attributes.name}
+              selected={selectedItem === "Elderly"}
+              onClick={handleClick}
+            />
+          </Link>
 
-      <Link to="/SingleCategory">
-        <NavItem
-          item="Children"
-          selected={selectedItem === "Children"}
-          onClick={handleClick}
-        />
-      </Link>
+          ))
+        ):(
 
-      <Link to="/SingleCategory">
-        <NavItem
-          item="Lifestyle"
-          selected={selectedItem === "Lifestyle"}
-          onClick={handleClick}
-        />
-      </Link>
+          <p>
+          Fetching data...
+      </p>
 
-      <Link to="/SingleCategory">
-        <NavItem
-          item="Fitness"
-          selected={selectedItem === "Fitness"}
-          onClick={handleClick}
-        />
-      </Link>
+        )
+      }
 
-      <Link to="/SingleCategory">
-        <NavItem
-          item="Expecting Moms"
-          selected={selectedItem === "Expecting Moms"}
-          onClick={handleClick}
-        />
-      </Link>
+
     </div>
   );
 }
