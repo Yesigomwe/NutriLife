@@ -64,7 +64,7 @@ export const Blogs = () => {
         {Blogs.map((blogs, index) => (
           <div
             key={index}
-            className="flex flex-col shadow-sm md:w-[500px] bg-[#033500] p-4 rounded h-600"
+            className="flex flex-col shadow-sm md:w-[500px] bg-[#033500] p-4 rounded h-600 "
           >
             <a
               href={blogs.photo}
