@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 export function AboutUs() {
@@ -86,3 +87,5 @@ export function AboutUs() {
     </div>
   );
 }
+
+

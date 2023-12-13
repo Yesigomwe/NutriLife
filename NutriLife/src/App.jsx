@@ -11,10 +11,12 @@ import Recipes from "./components/Recipes";
 import RecipeDetails from "./components/RecipeDetails";
 import Categories from "./components/Categories";
 import { Blogs } from "./components/Blogs";
-import { AboutUs } from "./components/AboutUs";
+import {AboutUs} from "./components/AboutUs"
 import { SingleCategory } from "./components/SingleCategory";
 import { Login } from "./components/Login";
 import { SignUp } from "./components/SignUp";
+import { Contact } from "./components/Contact";
+import FestiveSeasonSection from "./components/FestiveSeasonSection";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/SingleCategory" element={<SingleCategory />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/FestiveSeasonSection" element={<FestiveSeasonSection />} />
       </Routes>
     </MantineProvider>
   );
