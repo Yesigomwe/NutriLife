@@ -20,7 +20,7 @@ function LandingPage() {
         }
 
         const result = await response.json();
-        setData(result.data.slice(0,3)); //Adding slice method limits the results to 3 items since limit parameter is a strapi limitation.
+        setData(result.data.slice(0, 3)); //Adding slice method limits the results to 3 items since limit parameter is a strapi limitation.
       } catch (error) {
         console.error("Fetch error:", error);
       }
@@ -55,11 +55,9 @@ function LandingPage() {
             {Array.isArray(data) ? (
               data.map((recipe) => (
                 <Recipes
-                name={recipe.attributes.name}
+                  name={recipe.attributes.name}
                   key={recipe.id}
-                  
                   image={`https://nutrilife.onrender.com${recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}`}
-                  
                   description={recipe.attributes.name}
                 />
               ))
@@ -78,38 +76,36 @@ function LandingPage() {
             Why Us
           </h1>
           <div className="pt-16 flex justify-between flex-grow">
-            <WhyUs
-              image="/assets/delivery.png"
-              description="Fast Deliveries"
-            />
-            <WhyUs
-              image="/assets/payment.png"
-              description="Budget-Friendly"
-            />
+            <WhyUs image="/assets/delivery.png" description="Fast Deliveries" />
+            <WhyUs image="/assets/payment.png" description="Budget-Friendly" />
 
             <WhyUs image="/assets/support.png" description="Live Chat" />
           </div>
         </div>
-        <div className="w-1440 h-700 bg-orange p-8">
-          <h2 className="bg-green text-white font-bold w-340 h-40">
-            {" "}
-            Special Offers!
-          </h2>
-          <div className="flex ">
-            <p className="w-650 text-white font-bold text-30">
-              <span className="text-48">GET 30% OFF THIS FESTIVE SEASON</span>{" "}
-              This offer is available from 16th NOV-27th DEC. It applies on all
-              package subscriptions and orders.
-            </p>
-            <img className="w-650" src="/assets/offer.png" alt="offer" />
+        <div className="w-1440 h-700 p-8 border-solid border-2 border-orange flex justify-between">
+          <div className="flex flex-col justify-between items-between">
+            <h2 className="bg-green text-orange font-bold w-340 h-40 ">
+              Special Offers!
+            </h2>
+            <div className="flex ">
+              <p className="w-650 text-green font-bold text-30">
+                <span className="text-48">GET 30% OFF THIS FESTIVE SEASON</span>
+                This offer is available from 16th NOV-27th DEC. It applies on
+                all package subscriptions and orders.
+              </p>
+            </div>
+            <div className="justify-center ">
+              <h2 className="bg-orange text-white font-bold w-340 h-40 rounded-5">
+                Claim Offers Now!
+              </h2>
+            </div>
           </div>
-          <h2 className="bg-green text-white font-bold w-340 h-40">
-            Claim Offers Now!
-          </h2>
+          <img className="w-575 h-426" src="/assets/offer.png" alt="offer" />
         </div>
         <div className="w-auto bg-green h-102 flex justify-end gap-5 items-center pr-4">
           <img className="w-80 h-64" src="/assets/fb.png" alt="fb" />
         </div>
+
         <Footer />
       </div>
     </div>
