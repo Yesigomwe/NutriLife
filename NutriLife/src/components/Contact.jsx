@@ -11,7 +11,7 @@ export function Contact() {
               <h2 className="text-2xl font-bold mb-4 text-white">Our Commitment to You</h2>
               <div className="mb-4">
                 <img
-                  src="/src/assets/customercare.jpg"  
+                  src="/assets/customercare.jpg"  
                   alt="Customer Care"
                   className="w-full h-auto rounded"
                 />

@@ -6,19 +6,19 @@ const FestiveSeasonSection = () => {
       title: "Nourishing Winter Delights: Seasonal Ingredient Spotlight",
       description:
         "Explore the goodness of seasonal ingredients during this festive winter season. From hearty root vegetables to vibrant berries, discover recipes and wellness tips that embrace the essence of the holidays.",
-      photo: "/src/assets/packed-desserts3.jpg",
+      photo: "/assets/packed-desserts3.jpg",
     },
     {
       title: "Nourishing Winter Delights: Seasonal Ingredient Spotlight",
       description:
         "Explore the goodness of seasonal ingredients during this festive winter season. From hearty root vegetables to vibrant berries, discover recipes and wellness tips that embrace the essence of the holidays.",
-      photo: "/src/assets/packed-desserts3.jpg",
+      photo: "/assets/packed-desserts3.jpg",
     },
     {
       title: "Nourishing Winter Delights: Seasonal Ingredient Spotlight",
       description:
         "Explore the goodness of seasonal ingredients during this festive winter season. From hearty root vegetables to vibrant berries, discover recipes and wellness tips that embrace the essence of the holidays.",
-      photo: "/src/assets/packed-desserts3.jpg",
+      photo: "/assets/packed-desserts3.jpg",
     },
     
   ];
