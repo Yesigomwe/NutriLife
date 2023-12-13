@@ -44,7 +44,7 @@ function RecipeDetails(props) {
             <div >
             {recipeDetails.attributes.detail_image && recipeDetails.attributes.detail_image.image && (
               <img className="w-645 h-780"
-                src={`https://nutrilife.onrender.com${recipeDetails.attributes.detail_image.image.data.attributes.formats.thumbnail.url}`}
+                src={recipeDetails.attributes.detail_image.image.data.attributes.formats.thumbnail.url}
                 alt="recipe_details"
               />
             )}

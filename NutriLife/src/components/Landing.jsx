@@ -57,9 +57,11 @@ function LandingPage() {
                 <Recipes
                   name={recipe.attributes.name}
                   key={recipe.id}
-                  image={`https://nutrilife.onrender.com${recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}`}
+                  image={recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}
                   description={recipe.attributes.name}
+                  
                 />
+
               ))
             ) : (
               <p>Loading...</p>

@@ -60,7 +60,7 @@ export function AboutUs() {
             >
               {teamMember.attributes.display_image && (
                 <img
-                  src={`https://nutrilife.onrender.com${teamMember.attributes.display_image.image.data.attributes.formats.thumbnail.url}`}
+                  src={teamMember.attributes.display_image.image.data.attributes.formats.thumbnail.url}
                   alt="image"
                   className="h-300 w-300 rounded-5"
                 />
