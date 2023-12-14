@@ -59,7 +59,7 @@ function LandingPage() {
                   key={recipe.id}
                   image={recipe.attributes.recipeImage.image.data.attributes.formats.thumbnail.url}
                   description={recipe.attributes.name}
-                  
+
                 />
 
               ))
