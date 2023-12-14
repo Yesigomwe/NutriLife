@@ -1,5 +1,4 @@
-import React from "react";
-
+import { useEffect, useState } from "react";
 export const Blogs = () => {
   const Blogs = [
     {
@@ -21,7 +20,6 @@ export const Blogs = () => {
       photo: "/assets/breakfast1.jpg",
     },
   ];
-
 
   const AdditionalSections = [
     {
@@ -50,41 +48,81 @@ export const Blogs = () => {
     },
   ];
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(
+          "https://nutrilife.onrender.com/api/blogs?populate=*"
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result.data); //Adding slice method limits the results to 3 items since limit parameter is a strapi limitation.
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []); // Empty dependency array ensures the effect runs once on mount
+
   return (
     <div className="md:px-10 px-7 my-8" id="projects">
       <h1 className="text-primary font-bold text-3xl mt-16">
         WholesomeBites: Nourish Your Body, Feed Your Soul
       </h1>
-      <p className="my-3 text-black md:w-3/4 leading-[2] mx-auto font-bold text-center" style={{ fontFamily: 'Georgia, Helvetica, sans-serif' }}>
-        Welcome to WholesomeBites, your gateway to a culinary journey that goes beyond mere sustenance. Here, we believe that every bite is an opportunity to nourish your body and feed your soul. Our mission is to bring you a delectable fusion of flavors, vibrant ingredients, and mindful nutrition. Join us as we explore the world of Epicurean Wellness, where each recipe is a celebration of the symbiosis between wholesome ingredients and soulful satisfaction. It's not just about eating; it's about savoring the essence of life with every WholesomeBite.
+      <p
+        className="my-3 text-black md:w-3/4 leading-[2] mx-auto font-bold text-center"
+        style={{ fontFamily: "Georgia, Helvetica, sans-serif" }}
+      >
+        Welcome to WholesomeBites, your gateway to a culinary journey that goes
+        beyond mere sustenance. Here, we believe that every bite is an
+        opportunity to nourish your body and feed your soul. Our mission is to
+        bring you a delectable fusion of flavors, vibrant ingredients, and
+        mindful nutrition. Join us as we explore the world of Epicurean
+        Wellness, where each recipe is a celebration of the symbiosis between
+        wholesome ingredients and soulful satisfaction. It's not just about
+        eating; it's about savoring the essence of life with every
+        WholesomeBite.
       </p>
 
       {/* Featured projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-5 my-6 items-center justify-center">
-        {Blogs.map((blogs, index) => (
-          <div
-            key={index}
-            className="flex flex-col shadow-sm md:w-[500px] bg-[#033500] p-4 rounded h-600 "
-          >
-            <a
-              href={blogs.photo}
-              target="_blank"
-              rel="noreferrer"
-              className="mb-6"
+        {Array.isArray(data) ? (
+          data.map((blog) => (
+            <div
+              key={blog.id}
+              className="flex flex-col shadow-sm md:w-[500px] bg-[#033500] p-4 rounded h-600 "
             >
-              <img src={blogs.photo} alt={blogs.title} />
-            </a>
-            <h3 className="text-white font-bold text-lg">
-              {blogs.title}
-            </h3>
-            <p className="text-white mt-1 ">{blogs.description}</p>
-            <div className="mt-5">
-              <button className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-orange hover:text-primary">
-                Read more
-              </button>
+              <a href="#" target="_blank" rel="noreferrer" className="mb-6">
+                {blog.attributes.image &&
+                  blog.attributes.image.data.attributes && (
+                    <img
+                      src={
+                        blog.attributes.image.data.attributes.formats.large.url
+                      }
+                      alt="image"
+                    />
+                  )}
+              </a>
+              <h3 className="text-white font-bold text-lg">
+                {blog.attributes.name}
+              </h3>
+              <p className="text-white mt-1 ">{blog.attributes.description}</p>
+              <div className="mt-5">
+                <button className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-orange hover:text-primary">
+                  Read more
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Fetching data...</p>
+        )}
       </div>
 
       {/* Additional Sections */}
@@ -112,11 +150,6 @@ export const Blogs = () => {
           </div>
         ))}
       </div>
-
-    
-      
-        
-      </div>
-    
+    </div>
   );
 };
