@@ -60,9 +60,9 @@ export function AboutUs() {
             >
               {teamMember.attributes.display_image && (
                 <img
-                  src={`https://nutrilife.onrender.com${teamMember.attributes.display_image.image.data.attributes.formats.thumbnail.url}`}
+                  src={teamMember.attributes.display_image.image.data.attributes.url}
                   alt="image"
-                  className="h-300 w-300 rounded-5"
+                  className="h-[250px] w-300 rounded-5"
                 />
               )}
               <div className="info flex w-300 flex-col items-start bg-orange text-green font-bold">

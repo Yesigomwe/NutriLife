@@ -35,16 +35,15 @@ function RecipeDetails(props) {
     <div className="m-4">
       {Array.isArray(data) ? (
         data.map((recipeDetails) => (
-          <div className="flex w-1290 h-780" key={recipeDetails.id}>
-            <div className="bg-green flex flex-col items-center justify-center w-645 h-780 text-white font-bold">
+          <div className="flex w-[1200px] h-[650px] border-solid border-2 border-orange m-auto" key={recipeDetails.id}>
+            <div className=" details bg-white flex flex-col items-center justify-center w-[600px] h-[650px] text-green font-bold">
               <h1 className="text-30">{recipeDetails.attributes.name}</h1>
-
               <p>{recipeDetails.attributes.details} </p>
             </div>
             <div >
             {recipeDetails.attributes.detail_image && recipeDetails.attributes.detail_image.image && (
-              <img className="w-645 h-780"
-                src={`https://nutrilife.onrender.com${recipeDetails.attributes.detail_image.image.data.attributes.formats.thumbnail.url}`}
+              <img className="w-[600px] h-[650px]"
+                src={recipeDetails.attributes.detail_image.image.data.attributes.url}
                 alt="recipe_details"
               />
             )}
